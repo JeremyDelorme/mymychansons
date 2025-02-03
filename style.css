@@ -1,40 +1,175 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #3498db;
-    color: white;
+    background-color: #ffc400;
+    color: #833d00;
     text-align: center;
-    padding: 30px;
+    padding: 10px;
 }
 
-#songs-list {
+#container {
+    padding: 20px;
+    background-color: rgb(255, 204, 232);
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #833d00;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+/* ✅ Disposition en flex des albums avec alignement optimal */
+#albums-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ✅ Style des albums */
+.album-item {
+    width: calc(33.33% - 40px);
+    max-width: 320px;
+    background-color: rgb(118, 212, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #833d00;
+    font-size: 20px;
+}
+
+/* ✅ Style pour les images des albums */
+.album-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 2px;
+}
+
+/* ✅ Style des boutons */
+button {
+    background-color: #007722;
+    color: rgb(255, 250, 235);
+    padding: 10px;
+    /* Doubled from 10px */
+    font-size: 22px;
+    /* Doubled for better readability */
+    border: none;
+    border-radius: 10px;
+    /* Doubled from 5px */
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #00957a;
+}
+
+/* ✅ Style du bouton de retour */
+.back-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    position: fixed;
+    /* Position fixe */
+    bottom: 20px;
+    /* Distance depuis le bas de la page */
+    right: 20px;
+    /* Distance depuis la droite de la page */
+    font-size: 1.2em;
+    text-align: center;
+    z-index: 10;
+    /* Assure que le bouton reste au-dessus des autres éléments */
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
+
+.footer {
+    background-color: #45a049;
+}
+
+/* ✅ Responsive : 2 albums par ligne sur tablette */
+@media (max-width: 1024px) {
+    .album-item {
+        width: calc(50% - 40px);
+    }
+}
+
+/* ✅ Responsive : 1 album par ligne sur mobile */
+@media (max-width: 600px) {
+    .album-item {
+        width: 100%;
+    }
+}
+
+/* ✅ Disposition flex pour les listes de chansons et stems */
+#songs-list,
+#stems-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 20px;
+    margin-top: 20px;
 }
 
+/* Style pour les images des albums et des chansons */
+.album-item img,
+.song-item img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* ✅ Conteneur des chansons */
 .song-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: white;
     padding: 20px;
     margin: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 250px;
+    /* Largeur fixe */
     text-align: center;
 }
 
-.song-item h3 {
-    font-size: 20px;
+/* Style pour le titre de la chanson */
+.song-title {
+    font-size: 1.2em;
     margin: 10px 0;
+    color: #ff6f61;
+    /* Couleur personnalisée pour le titre */
 }
 
-.song-item audio {
+/* Style pour le lecteur audio */
+audio {
     width: 100%;
+    /* S'assurer que le lecteur audio occupe toute la largeur de son conteneur */
     margin-top: 10px;
+    /* Un peu d'espace entre le titre et le lecteur */
 }

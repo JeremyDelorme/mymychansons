@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chansons de Berlin - Les chansons de Mymy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Chansons de Berlin</h1>
+        <p>Découvrez les chansons de Berlin !</p>
+    </header>
+
+    <div id="container">
+        <!-- Bouton de retour aux albums -->
+        <a href="index.html">
+            <button class="back-button">Retour aux albums</button>
+        </a>
+
+        <section id="songs-section">
+            <h2>Chansons</h2>
+            <div id="songs-list">
+                <!-- Les chansons seront affichées ici dynamiquement -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Liste des chansons de l'album Fruits avec une image pour chaque chanson
+        const songs = [
+            { title: "And I take off", file: "audio/Berlin/and_i_take_off.wav", image: "images/beach.jpg" },
+            { title: "Plane", file: "audio/Berlin/plane.wav", image: "images/beach.jpg" },
+        ];
+
+        function displaySongs() {
+            const songsList = document.getElementById('songs-list');
+            songsList.innerHTML = '';
+
+            songs.forEach(song => {
+                const songDiv = document.createElement('div');
+                songDiv.classList.add('song-item');
+                songDiv.innerHTML = `
+                    <h3 class="song-title">${song.title}</h3>
+                    <img src="${song.image}" alt="${song.title}" class="song-image">
+                    <audio controls>
+                        <source src="${song.file}" type="audio/wav">
+                        Votre navigateur ne supporte pas l'audio.
+                    </audio>
+                `;
+                songsList.appendChild(songDiv);
+            });
+        }
+
+        // Affichage des chansons au chargement de la page
+        window.onload = displaySongs;
+    </script>
+</body>
+
+</html>

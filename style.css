@@ -67,6 +67,7 @@ button {
     background-color: #007722;
     color: rgb(255, 250, 235);
     padding: 10px;
+    margin: 10px;
     /* Doubled from 10px */
     font-size: 22px;
     /* Doubled for better readability */
@@ -148,7 +149,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: rgb(226, 124, 28);
     padding: 20px;
     margin: 15px;
     border-radius: 8px;
@@ -174,32 +175,65 @@ audio {
     /* Un peu d'espace entre le titre et le lecteur */
 }
 
-/* Style pour le bouton Stems */
-.stems-button {
-    background-color: #ff6f61;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 1em;
-}
-
-.stems-button:hover {
-    background-color: #ff3b2f;
-}
-
-/* Style pour les items de stems */
-.stem-item {
+/* ✅ Conteneur principal des stems */
+#stems-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
-    padding: 20px;
-    margin: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    gap: 12px;
+    /* Espacement entre les stems */
+}
+
+/* ✅ Style pour chaque stem */
+.stem-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fffbeb;
+    /* Jaune pâle doux */
+    padding: 22px;
+    border-radius: 4px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 900px;
+    /* Légèrement plus large */
+}
+
+/* ✅ Style pour le titre */
+.stem-title {
+    font-size: 1.4em;
+    color: #833d00;
+    font-weight: bold;
+    flex: 1;
+    text-align: left;
+    min-width: 150px;
+    /* Pour éviter qu'il ne devienne trop petit */
+}
+
+/* ✅ Style pour le lecteur audio (plus large) */
+.stem-item audio {
+    flex: 3;
+    /* Permet d'occuper plus d'espace */
+    max-width: 1000px;
+    /* Étirement horizontal augmenté */
+    margin-left: 20px;
+    /* Espace entre le titre et l'audio */
+}
+
+/* ✅ Responsive : ajustement pour mobile */
+@media (max-width: 600px) {
+    .stem-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 18px;
+    }
+
+    .stem-item audio {
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
 }

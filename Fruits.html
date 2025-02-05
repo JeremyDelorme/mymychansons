@@ -32,11 +32,11 @@
     <script>
         // Liste des chansons de l'album Fruits avec une image pour chaque chanson
         const songs = [
-            { title: "Pomme", file: "audio/Fruits/pomme.wav", image: "images/pomme.jpg" },
-            { title: "Poire", file: "audio/Fruits/poire.wav", image: "images/poire.jpg" },
-            { title: "Clémentine", file: "audio/Fruits/clementine.wav", image: "images/clementine.jpg" },
-            { title: "Groseille", file: "audio/Fruits/groseille.wav", image: "images/groseille.jpg" },
-            { title: "Kaki", file: "audio/Fruits/kaki.wav", image: "images/kaki.jpg" }
+            { title: "Pomme", file: "audio/Fruits/pomme.wav", image: "images/pomme.jpg", stems: "Stems_pomme.html" },
+            { title: "Poire", file: "audio/Fruits/poire.wav", image: "images/poire.jpg", stems: "Stems_poire.html" },
+            { title: "Clémentine", file: "audio/Fruits/clementine.wav", image: "images/clementine.jpg", stems: "Stems_clementine.html" },
+            { title: "Groseille", file: "audio/Fruits/groseille.wav", image: "images/groseille.jpg", stems: "Stems_groseille.html" },
+            { title: "Kaki", file: "audio/Fruits/kaki.wav", image: "images/kaki.jpg", stems: "Stems_kaki.html" }
         ];
 
         function displaySongs() {
@@ -53,6 +53,7 @@
                         <source src="${song.file}" type="audio/wav">
                         Votre navigateur ne supporte pas l'audio.
                     </audio>
+                    <a href="${song.stems}"><button class="stems-button">Stems</button></a>
                 `;
                 songsList.appendChild(songDiv);
             });

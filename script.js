@@ -2,18 +2,22 @@
 const albums = [
     {
         title: "Fruits",
-        page: "fruits.html",
-        image: "images/fruits.jpg", // ✅ Image ajoutée
+        page: "/pages/fruits.html", // Adjusted path for fruits page
+        image: "../assets/Images/Fruits/fruits.jpg", // ✅ Correct path to image
+        songs: [
+            { title: "Pomme", file: "../assets/audio/Fruits/pomme.wav" }, // Updated path for fruits audio
+            // Add other songs here if necessary
+        ]
     },
     {
         title: "Légumes",
         page: "legumes.html",
-        image: "images/legumes.jpg", // ✅ Image ajoutée
+        image: "../assets/Images/Legumes/legumes.jpg", // ✅ Image ajoutée
     },
     {
         title: "Berlin",
         page: "berlin.html",
-        image: "images/beach.jpg", // ✅ Image ajoutée
+        image: "../assets/Images/Berlin/beach.jpg", // ✅ Image ajoutée
         songs: [
             { title: "And I take off", file: "audio/Berlin/and_i_take_off.wav" },
             { title: "Plane", file: "audio/Berlin/plane.wav" },
@@ -22,22 +26,13 @@ const albums = [
     {
         title: "Panpan",
         page: "panpan.html",
-        image: "images/panpan.png", // ✅ Image ajoutée
+        image: "../assets/Images/Panpan/panpan.png", // ✅ Image ajoutée
         songs: [
             { title: "Intro", file: "audio/Panpan/intro.wav" },
             { title: "Panpan à la maison", file: "audio/Panpan/panpan_a_la_maison.wav" },
             { title: "Danse du feu", file: "audio/Panpan/danse_du_feu.wav" },
         ]
     },
-    {
-        title: "Chansons impromptues",
-        page: "chansons_impromptues.html",
-        image: "images/impromptue1.png", // ✅ Image ajoutée
-        songs: [
-            { title: "Beat 1", file: "audio/ChansonsImpromptues/beat_1.wav" },
-        ]
-    },
-
 ];
 
 // Function to display albums

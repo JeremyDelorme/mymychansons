@@ -1,0 +1,55 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+#container {
+    padding: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#albums-list,
+#songs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.album,
+.song {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.album img,
+.song img {
+    width: 100%;
+    height: auto;
+}

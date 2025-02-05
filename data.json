@@ -1,0 +1,25 @@
+{
+    "albums": [
+        {
+            "title": "Fruits",
+            "page": "/page/fruits.html",
+            "image": "../assets/Images/Fruits/fruits.jpg"
+        }
+    ],
+    "songs": {
+        "Fruits": [
+            {
+                "title": "Pomme",
+                "file": "../assets/audio/Fruits/pomme.wav",
+                "image": "../assets/Images/Fruits/pomme.jpg",
+                "stems": "../pages/stems/stems_pomme.html"
+            },
+            {
+                "title": "Poire",
+                "file": "../assets/audio/Fruits/poire.wav",
+                "image": "../assets/Images/Fruits/poire.jpg",
+                "stems": "../pages/stems/stems_poire.html"
+            }
+        ]
+    }
+}
